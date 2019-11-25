@@ -1,4 +1,4 @@
-const generateSlug = require('./common/generateSlug')
+const generateSlug = require('./generateSlug')
 
 module.exports = {
   generateSlug
