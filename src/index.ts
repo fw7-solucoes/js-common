@@ -1,5 +1,1 @@
-import generateSlug from './generateSlug'
-
-export default {
-  generateSlug
-}
+export { default  as generateSlug } from './generateSlug'
