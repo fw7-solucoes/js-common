@@ -1,9 +1,14 @@
 {
   "name": "@fw7/js-common",
-  "version": "1.0.1",
-  "main": "src/index.js",
+  "version": "1.0.2",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
+  "prepublish": "tsc",
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.5"
   }
 }

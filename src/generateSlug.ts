@@ -1,20 +1,21 @@
-const generateSlug = strToReplace => {
+const generateSlug = (strToReplace: string): string => {
   var comAcento = 'áàãâäéèêëíìîïóòõôöúùûüçñÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇÑ'
   var semAcento = 'aaaaaeeeeiiiiooooouuuucnAAAAAEEEEIIIIOOOOOUUUUCN'
   var caracteres = '´`¨~.,:=+-!?()[]/_&*@#$%^"\'|<>{};'
 
-  for (const l in strToReplace) {
-    for (const l2 in comAcento) {
+  strToReplace.split('').forEach((_, l) => {
+    comAcento.split('').forEach((_, l2) => {
       if (strToReplace[l] === comAcento[l2]) {
         strToReplace = strToReplace.replace(strToReplace[l], semAcento[l2])
       }
+
       if (strToReplace[l] === caracteres[l2]) {
         strToReplace = strToReplace.replace(strToReplace[l], '')
       }
-    }
-  }
+    })
+  })
   
   return strToReplace.toLowerCase().replace(/\s+/g, '-')
 }
 
-module.exports = generateSlug
+export default generateSlug
